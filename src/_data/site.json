@@ -1,0 +1,11 @@
+{
+	"baseUrl": "https://example.com",
+	"lang": "en-US",
+	"title": "Site Title",
+	"metagen": {
+		"desc": "Site description",
+		"img": "/assets/img/abq.webp",
+		"twitter": "example",
+		"author": "My Name"
+	}
+}

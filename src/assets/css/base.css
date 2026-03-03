@@ -1,0 +1,15 @@
+.container picture,
+.container img {
+	max-width: 100%;
+}
+
+h1 {
+	font-family: "Yesteryear", cursive;
+}
+
+body {
+	background-image: url('/assets/img/abq.webp' );
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}

@@ -1,0 +1,61 @@
+---
+{
+	bootstrap: true,
+	markdown: false
+}
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang or 'en-US' }}">
+	<head>
+
+		{% if title or site.title %}
+			<title>{% if title %}{{ title }}{% endif %}{% if site.title and title %} - {% endif %}{% if site.title %}{{ site.title }}{% endif %}</title>
+		{% endif %}
+
+		<meta name="viewport" content="{{ site.meta.viewport.content | default ( 'width=device-width, initial-scale=1' ) }}">
+
+		{% metagen {
+			title: false,
+			url: site.config.baseUrl + page.url,
+			desc: site.metagen.desc or '',
+			img: site.config.baseUrl + site.metagen.img,
+			img_alt: site.title,
+			twitter_card_type: 'summary_large_image',
+			twitter_handle: site.metagen.twitter or '',
+			name: site.metagen.author or ''
+		} %}
+
+		<link rel="stylesheet" href="/assets/css/sanitize.css/assets.css">
+		<link rel="stylesheet" href="/assets/css/sanitize.css/forms.css">
+		<link rel="stylesheet" href="/assets/css/sanitize.css/reduce-motion.css">
+		<link rel="stylesheet" href="/assets/css/sanitize.css/sanitize.css">
+		<link rel="stylesheet" href="/assets/css/sanitize.css/system-ui.css">
+		<link rel="stylesheet" href="/assets/css/sanitize.css/typography.css">
+		<link rel="stylesheet" href="/assets/css/sanitize.css/ui-monospace.css">
+
+		<link rel="stylesheet" href="/assets/css/base.css">
+
+		<style>{% getBundle "css" %}</style>
+
+		{% eleventyGoogleFonts 'https://fonts.googleapis.com/css2?family=Yesteryear&display=swap' %}
+
+		{% if ga4.id or ga4.force %}
+			{% ga4 ga4.id, { force: ga4.force } %}
+		{% endif %}
+	</head>
+
+	<body class="{{ body.class | default( '' ) }}">
+		<main class="{{ body.main.class | default( '' ) }}">
+			{% if content %}
+				{% if markdown != false %}
+					{{ content | markdown | safe }}
+				{% else %}
+					{{ content | safe }}
+				{% endif %}
+			{% endif %}
+		</main>
+
+		<script src="/assets/js/base.js" defer></script>
+		<script>{% getBundle 'js' %}</script>
+	</body>
+</html>
