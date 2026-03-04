@@ -6,7 +6,7 @@
 
 <section>
 	<div class="content bordered compact">
-		<!---->
+		<!-- It's cheap, I know. -->
 	</div>
 </section>
 
@@ -24,10 +24,10 @@
 					<p class="title">Web Developer / Designer</p>
 				</div>
 
-				{{ "I _**build and maintain**_ websites for people who are **sick of doing it themselves** and want a website **just works!**" | markdown | safe }}
+				{{ "I _**build and maintain**_ websites for people who are **sick of doing it themselves** and want a website that **just works!**" | markdown | safe }}
 			</div>
 
-			<img src="/assets/img/aubrey.jpg" alt="Aubrey Portwood">
+			<img src="/assets/img/aubrey.jpg" alt="Aubrey Portwood" onload="setTimeout( () => this.classList.add( 'loaded' ), 1000 )">
 		</div>
 
 		<ol class="you-run-your-business">
@@ -57,8 +57,61 @@
 
 		<div class="content-block">
 			{{ "**Need content updates?** Want to run a campaign? Not sure what to do next?" | markdown | safe }}
-			{{ "**I work directly with you every month** to get the most out of your website. Whatever's going on, I make sure your website is working along-side your what your business is doing." | markdown | safe }}
+			{{ "I work directly with you **every month** to get the most out of your website. Whatever's going on, I make sure your website is working along-side your what your business is doing." | markdown | safe }}
 			{{ "**Think of me as a member of your team going forward.** Expect me to keep up with things going on in your business and keeping your website up to date and following **your goals.**" | markdown | safe }}
 		</div>
+	</div>
+</section>
+
+<section id="reviews" class="white">
+	<div class="content full no-gap">
+		<ul class="testimonials">
+			{% for review in reviews %}
+				<li>
+					<span class="icon">&rdquo;</span>
+					<span class="quote">&ldquo;{{ review.quote }}&rdquo;</span>
+					<div class="name-and-company">
+						<span class="name">{{ review.name }}</span>
+						<span class="company">{{ review.company }}</span>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
+
+<section id="experience">
+	<div class="content bordered centered">
+
+		<h2>I spent over a <strong>decade</strong> building websites for agencies working with big companies like <strong class="microsoft">Microsoft</strong> and <strong class="monster">Monster.com</strong></h2>
+
+		<div class="progress">
+			<div class="am">
+				<h3 class="years">3 years</h3>
+				<div class="where">AwesomeMotive</div>
+			</div>
+		</div>
+
+		<div class="progress">
+			<div class="webdev">
+				<h3 class="years">7 years</h3>
+				<div class="where">WebDevStudios</div>
+			</div>
+		</div>
+
+		<p class="claim">Now I help <strong>small businesses</strong> get their website <em>actually</em> aligned with their goals.</p>
+	</div>
+</section>
+
+<section id="cta" class="textured">
+	<div class="content bordered centered">
+		<h2>Ready to let <em>someone else</em> take over?</h2>
+		<p><a href="#" class="button alt1" data-koalendar="true">Book free kickoff call <span class="material-symbols-outlined">calendar_add_on</span></a></p>
+	</div>
+</section>
+
+<section id="footer">
+	<div class="content bordered compact centered">
+		<p>Made in <img src="/assets/img/nm.webp" alt="Made in New Mexico"> <strong>Albuquerque</strong>, New Mexico</p>
 	</div>
 </section>
