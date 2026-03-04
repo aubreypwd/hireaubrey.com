@@ -6,6 +6,7 @@
 	--borders: #e7e4e4;
 	--alt2: #999898;
 	--alt3: #4f4f4f;
+	--green: #25ba25;
 
 	--faces: clamp(5rem,15vw,10rem);
 	--sides: clamp(1rem,10vw,10rem);
@@ -28,6 +29,10 @@ body {
 h1, h2, h3, h4, h5, p, ul, ol, blockquote {
 	margin: 0;
 	font-weight: normal;
+}
+
+a {
+	color: var(--alt);
 }
 
 main {
@@ -57,7 +62,7 @@ main {
 
 			margin-left: var(--sides);
 			margin-right: var(--sides);
-			padding: var(--sides);
+			padding: calc(var(--sides)/1.5) var(--sides);
 
 			display: flex;
 			justify-content: center;
@@ -85,12 +90,12 @@ main {
 			p:first-child {
 				color: var(--alt);
 				font-size: 5rem;
-				font-weight: 800;
+				font-weight: 700;
 			}
 
 			p:last-child {
-				font-weight: 700;
-				font-size: 3.5rem;
+				font-weight: 400;
+				font-size: 4rem;
 				color: var(--alt2);
 			}
 		}
@@ -99,25 +104,6 @@ main {
 			display: flex;
 			flex-direction: column;
 			gap: 3rem;
-		}
-
-		.status {
-
-			border: 1px dotted var(--borders);
-			border-radius: 4rem;
-			padding: calc(1rem/3) 0.8rem calc(1rem/3) 0.7rem;
-			font-size: 0.9rem;
-			display: inline-block;
-			color: var(--alt3);
-
-			span {
-				display: inline-block;
-				background-color: #00cd00;
-				height: 10px;
-				width: 10px;
-				border-radius: 50%;
-				margin-right: 0.5rem;
-			}
 		}
 
 		.who-am-i {
@@ -129,10 +115,11 @@ main {
 
 			img {
 				order: 1;
-				height: 300px;
-				width: 300px;
+				height: 350px;
+				width: 350px;
 				border-radius: 5rem;
-				border: 1px solid black;
+				border: 1px solid var(--alt2);
+				filter: brightness(110%);
 			}
 
 			> .content {
@@ -146,6 +133,11 @@ main {
 				flex-direction: column;
 				gap: 3rem;
 				text-align: left;
+			}
+
+			.title {
+				font-size: 1rem;
+				color: var(--alt2);
 			}
 
 			.main-heading {
@@ -188,9 +180,80 @@ main {
 		}
 
 		h3 {
-			font-weight: 700;
+			font-weight: 600;
 			font-size: 4rem;
 			color: var(--alt);
 		}
+	}
+}
+
+.button {
+
+	background-color: var(--alt);
+	color: white;
+	box-shadow: inset -2px -2px hsl(0deg 0% 0% / 5%);
+
+	text-decoration: none;
+	border-radius: 2px;
+	/* border: 1px solid #fff; */
+	padding: 0.5rem 1rem;
+	transition: box-shadow 0.1s ease-in;
+
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 1.2rem;
+	letter-spacing: 0.5px;
+
+	&:hover {
+		box-shadow: inset -2px -2px hsl(0deg 0% 0% / 15%);
+	}
+
+	&.alt1 {
+		background-color: var(--green);
+		color: white;
+	}
+
+	&.alt2 {
+		background-color: var(--alt2);
+	}
+
+	&.primary-cta {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+
+		&:hover {
+			background-color: var(--green);
+			color: white;
+		}
+	}
+
+	.material-symbols-outlined {
+		font-size: 1.4rem;
+	}
+}
+
+.status {
+
+	border: 1px solid var(--green);
+	border-radius: 4rem;
+	padding: calc(1rem/3) 0.8rem calc(1rem/3) 0.7rem;
+	font-size: 0.9rem;
+	display: inline-block;
+	color: var(--alt3);
+
+	span {
+
+		display: inline-block;
+		background-color: #00cd00;
+		height: 10px;
+		width: 10px;
+		border-radius: 50%;
+		margin-right: 0.5rem;
 	}
 }
