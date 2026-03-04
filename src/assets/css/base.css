@@ -3,15 +3,26 @@
 	--font2: "Instrument Serif", serif;
 
 	--alt: #198cff;
-	--borders: #c3c8cf;
+	--borders: #e7e4e4;
+	--alt2: #999898;
+	--alt3: #4f4f4f;
+
+	--faces: clamp(5rem,15vw,10rem);
+	--sides: clamp(1rem,10vw,10rem);
 }
 
 body {
+
 	background: white;
 	color: black;
 	min-height: 100vh;
 	font-family: "Google Sans Flex", sans-serif;
 	font-size: 1.1rem;
+	margin: 0;
+	padding: 0;
+
+	/* background-image: url( '/assets/img/paper.webp' ); */
+	background-repeat: repeat;
 }
 
 h1, h2, h3, h4, h5, p, ul, ol, blockquote {
@@ -21,31 +32,41 @@ h1, h2, h3, h4, h5, p, ul, ol, blockquote {
 
 main {
 
-	--sides: clamp(1rem,9vw,9rem);
-	--faces: clamp(5rem,10vw,12rem);
-
-	margin-left: var(--sides);
-	margin-right: var(--sides);
-	margin-top: var(--faces);
-	margin-bottom: var(--faces);
+	margin-top: 0;
+	margin-bottom: 0;
 
 	display: flex;
 	flex-direction: column;
-	gap: 6rem;
+	gap: 0;
+	align-items: center;
 
 	> section {
+
+		background: white;
+		border-top: 1px dashed var(--borders);
+
+		&:first-child {
+			border-top: none;
+		}
 
 		&:last-child {
 			border-bottom: none;
 		}
 
 		> .content {
-			border-right: 1px dotted var(--borders);
-			border-left: 1px dotted var(--borders);
-			padding-right: var(--sides);
-			padding-left: var(--sides);
-			padding-top: calc(var(--sides)/2);
-			padding-bottom: calc(var(--sides)/2);
+
+			margin-left: var(--sides);
+			margin-right: var(--sides);
+			padding: var(--sides);
+
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+
+			&.bordered {
+				border-right: 1px dashed var(--borders);
+				border-left: 1px dashed var(--borders);
+			}
 		}
 	}
 
@@ -53,98 +74,123 @@ main {
 
 		.you-run-your-business {
 
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
 			p {
 				font-weight: 600;
-				font-size: 6rem;
 			}
 
 			p:first-child {
 				color: var(--alt);
+				font-size: 5rem;
+				font-weight: 800;
 			}
 
 			p:last-child {
-				font-weight: 400;
+				font-weight: 700;
+				font-size: 3.5rem;
+				color: var(--alt2);
 			}
 		}
 
 		> .content {
 			display: flex;
 			flex-direction: column;
-			gap: 2rem;
+			gap: 3rem;
+		}
+
+		.status {
+
+			border: 1px dotted var(--borders);
+			border-radius: 4rem;
+			padding: calc(1rem/3) 0.8rem calc(1rem/3) 0.7rem;
+			font-size: 0.9rem;
+			display: inline-block;
+			color: var(--alt3);
+
+			span {
+				display: inline-block;
+				background-color: #00cd00;
+				height: 10px;
+				width: 10px;
+				border-radius: 50%;
+				margin-right: 0.5rem;
+			}
 		}
 
 		.who-am-i {
+
 			display: flex;
 			flex-direction: row;
 			gap: 3rem;
-			align-items: center;
-		}
+			align-items: flex-start;
 
-		img {
-			height: 190px;
-			width: 190px;
-			border-radius: 50%;
-		}
-
-		.main-heading {
-			font-size: 9rem;
-			line-height: 5rem;
-			font-weight: 400;
-			font-family: var(--font2);
-		}
-
-		.heres-the-deal {
-
-			display: flex;
-			flex-direction: column;
-			gap: 3rem;
-
-			h2 {
-				font-size: 2rem;
-				font-weight: 500;
+			img {
+				order: 1;
+				height: 300px;
+				width: 300px;
+				border-radius: 5rem;
+				border: 1px solid black;
 			}
 
 			> .content {
 
-				font-size: 1.1rem;
+				order: 0;
+
+				line-height: 3rem;
+				font-size: 2rem;
 				font-weight: 400;
 				display: flex;
 				flex-direction: column;
-				gap: 0.5rem;
+				gap: 3rem;
 				text-align: left;
-				line-height: 2rem;
+			}
+
+			.main-heading {
+
+				font-size: 7rem;
+				line-height: 7rem;
+				font-weight: 500;
+				font-family: var(--font2);
 			}
 		}
 	}
 
 	#how {
 
+		background-image: url( '/assets/img/paper.webp' );
+		background-repeat: repeat;
+
 		> .content {
+
 			display: flex;
 			flex-direction: column;
-			gap: 2rem;
+			gap: 3rem;
 
 			> .content {
+
 				display: flex;
 				flex-direction: column;
-				gap: 1rem;
+				gap: 2rem;
 				line-height: 2rem;
+				font-size: 1.5rem;
 			}
 		}
 
 		h2 {
-			font-size: 8rem;
+			font-size: 7rem;
+			line-height: 7rem;
+			font-weight: 500;
 			font-family: var(--font2);
+			color: var(--alt3);
 		}
 
 		h3 {
-			font-weight: 800;
+			font-weight: 700;
 			font-size: 4rem;
 			color: var(--alt);
-
-			span {
-				font-weight: bold;
-			}
 		}
 	}
 }

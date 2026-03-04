@@ -5,46 +5,45 @@
 ---
 
 <section id="intro">
-	<div class="content">
+	<div class="content bordered">
+
+		<div>
+			<div class="status"><span></span>Available for work</div>
+		</div>
+
 		<div class="who-am-i">
-			<h1 class="main-heading">I'm <em>Aubrey</em></h1>
+
+			<div class="content">
+				<h1 class="main-heading">I'm Aubrey,</h1>
+				{{ "I build and maintain websites for people who are **sick of doing it themselves** and want their website **out of their way!**" | replace ( "\t", '' ) | markdown | safe }}
+			</div>
+
 			<img src="/assets/img/aubrey.jpg" alt="Aubrey Portwood">
 		</div>
 
-		<div class="heres-the-deal">
-			<div class="content">
-				{% set content %}
-				I build and maintain websites for businesses who are **sick of DIY** and want their website to **get out of the way!**
-
-				Hire a web developer _(me)_ who works directly with you **and takes care of everything.**
-				{% endset %}
-				{{ content | replace ( "\t", '' ) | markdown | safe }}
-			</div>
-		</div>
-
 		<div class="you-run-your-business">
-			<p><strong>You run your business.</strong></p>
-			<p>I run the website.</p>
+			<p>You run your business.</p>
+			<p>I'll run the website.</p>
 		</div>
 	</div>
 </section>
 
 <section id="how">
-	<div class="content">
+	<div class="content bordered">
 
 		<h2>How it works</h2>
 
 		<h3>We build your website.</h3>
 
 		<div class="content">
-			{{ "Unless you already have a website, **we build a website that's directly aligned with your business's goals.**" | markdown | safe }}
-			{{ "They're **lean**, **simple**, and **you own it.** End our relationship? **Your website stays up.**" | markdown | safe }}
+			{{ "Unless you already have a website, **we build a website that's directly aligned with your business's goals.** They're **lean**, **simple**, and **you own it.** End our relationship? **Your website stays up.**" | markdown | safe }}
 		</div>
 
 		<h3>Now I'm on your team.</h3>
 
 		<div class="content">
-			{{ "**Need content updates?** Want to run a campaign? Not sure what to do next? **I work directly with you every month** to get the most out of your website. Whatever's going on, I make sure your website is working along-side your what your business is doing." | markdown | safe }}
+			{{ "**Need content updates?** Want to run a campaign? Not sure what to do next?" | markdown | safe }}
+			{{ "**I work directly with you every month** to get the most out of your website. Whatever's going on, I make sure your website is working along-side your what your business is doing." | markdown | safe }}
 			{{ "**Think of me as a member of your team going forward.** Expect me to keep up with things going on in your business and keeping your website up to date." | markdown | safe }}
 		</div>
 	</div>
