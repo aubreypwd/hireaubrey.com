@@ -2,7 +2,7 @@
 
 	--GoogleSans: "Google Sans Flex", sans-serif;
 	--Instrument: "Instrument Serif", serif;
-	--Caveat: "Caveat", cursive;
+	--Allura: "Allura", cursive;
 
 	--alt: #198cff;
 	--borders: #e4e4e4;
@@ -142,6 +142,10 @@ main {
 				font-weight: 500;
 				color: var(--alt3);
 				font-family: var(--GoogleSans);
+
+				> strong {
+					font-weight: 800;
+				}
 			}
 
 			> .content-block {
@@ -246,8 +250,25 @@ main {
 				}
 
 				> p:last-child {
+
 					font-size: clamp(var(--p-size),4vw,2rem);
 					line-height: clamp(var(--p-height),6vw,3rem);
+
+					em {
+
+						font-style: normal;
+						position: relative;
+
+						&::after {
+
+							content: " ";
+							border-bottom: 3px solid #dadada;
+							position: absolute;
+							bottom: 3px;
+							left: 0;
+							width: 100%;
+						}
+					}
 				}
 			}
 
