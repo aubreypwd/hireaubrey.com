@@ -1,18 +1,52 @@
 ---
 {
-	layout: "layouts/base",
-	title: "I am a starter 11ty project by @aubreypwd.",
-	markdown: true
+	layout: "layouts/base"
 }
 ---
 
-# {{ title }}
+<section id="intro">
+	<div class="content">
+		<div class="who-am-i">
+			<h1 class="main-heading">I'm <em>Aubrey</em></h1>
+			<img src="/assets/img/aubrey.jpg" alt="Aubrey Portwood">
+		</div>
 
-Look at `base.njk` and `.eleventy.js` to learn what I can do:
+		<div class="heres-the-deal">
+			<div class="content">
+				{% set content %}
+				I build and maintain websites for businesses who are **sick of DIY** and want their website to **get out of the way!**
 
-1. I will hoist any `<style>` tags to the `<head>` of the page, bundle it, minify it, and purge it.
-1. Any js in `assets/js/` will get sent through `babel` and `esbuild` so you can write whatever JS you want.
-1. I come with `@aubreypwd/11ty-tools` that comes with lots of shortcodes, macros, and includes to use.
-1. Images are automatically processed into `.webp` automatically by [https://www.11ty.dev/docs/plugins/image/](https://www.11ty.dev/docs/plugins/image/)
+				Hire a web developer _(me)_ who works directly with you **and takes care of everything.**
+				{% endset %}
+				{{ content | replace ( "\t", '' ) | markdown | safe }}
+			</div>
+		</div>
 
-<img src="/assets/img/sandias.jpg" alt="Sandia Mountains, Albuquerque NM">
+		<div class="you-run-your-business">
+			<p><strong>You run your business.</strong></p>
+			<p>I run the website.</p>
+		</div>
+	</div>
+</section>
+
+<section id="how">
+	<div class="content">
+
+		<h2>How it works</h2>
+
+		<h3>We build your website.</h3>
+
+		<div class="content">
+			{{ "Unless you already have a website, **we build a website that's directly aligned with your business's goals.**" | markdown | safe }}
+			{{ "They're **lean**, **simple**, and **you own it.** End our relationship? **Your website stays up.**" | markdown | safe }}
+		</div>
+
+		<h3>Now I'm on your team.</h3>
+
+		<div class="content">
+			{{ "**Need content updates?** Want to run a campaign? Not sure what to do next? **I work directly with you every month** to get the most out of your website. Whatever's going on, I make sure your website is working along-side your what your business is doing." | markdown | safe }}
+			{{ "**Think of me as a member of your team going forward.** Expect me to keep up with things going on in your business and keeping your website up to date." | markdown | safe }}
+		</div>
+	</div>
+</section>
+

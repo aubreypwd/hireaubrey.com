@@ -18,8 +18,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "serve": "rimraf docs/ && node --inspect ./node_modules/@11ty/eleventy/cmd.cjs --serve",
-    "build": "rimraf docs/ && node --inspect ./node_modules/@11ty/eleventy/cmd.cjs",
+    "serve": "rimraf _site/ && node --inspect ./node_modules/@11ty/eleventy/cmd.cjs --serve",
+    "build": "rimraf _site/ && node --inspect ./node_modules/@11ty/eleventy/cmd.cjs",
     "postinstall": "npm run tools",
     "tools": "if [ -d ./11ty-tools/.git ]; then npm link ./11ty-tools; fi"
   },

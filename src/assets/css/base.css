@@ -1,15 +1,150 @@
-.container picture,
-.container img {
-	max-width: 100%;
-}
+:root {
+	--font1: "Google Sans Flex", sans-serif;
+	--font2: "Instrument Serif", serif;
 
-h1 {
-	font-family: "Yesteryear", cursive;
+	--alt: #198cff;
+	--borders: #c3c8cf;
 }
 
 body {
-	background-image: url('/assets/img/abq.webp' );
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
+	background: white;
+	color: black;
+	min-height: 100vh;
+	font-family: "Google Sans Flex", sans-serif;
+	font-size: 1.1rem;
+}
+
+h1, h2, h3, h4, h5, p, ul, ol, blockquote {
+	margin: 0;
+	font-weight: normal;
+}
+
+main {
+
+	--sides: clamp(1rem,9vw,9rem);
+	--faces: clamp(5rem,10vw,12rem);
+
+	margin-left: var(--sides);
+	margin-right: var(--sides);
+	margin-top: var(--faces);
+	margin-bottom: var(--faces);
+
+	display: flex;
+	flex-direction: column;
+	gap: 6rem;
+
+	> section {
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		> .content {
+			border-right: 1px dotted var(--borders);
+			border-left: 1px dotted var(--borders);
+			padding-right: var(--sides);
+			padding-left: var(--sides);
+			padding-top: calc(var(--sides)/2);
+			padding-bottom: calc(var(--sides)/2);
+		}
+	}
+
+	#intro {
+
+		.you-run-your-business {
+
+			p {
+				font-weight: 600;
+				font-size: 6rem;
+			}
+
+			p:first-child {
+				color: var(--alt);
+			}
+
+			p:last-child {
+				font-weight: 400;
+			}
+		}
+
+		> .content {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.who-am-i {
+			display: flex;
+			flex-direction: row;
+			gap: 3rem;
+			align-items: center;
+		}
+
+		img {
+			height: 190px;
+			width: 190px;
+			border-radius: 50%;
+		}
+
+		.main-heading {
+			font-size: 9rem;
+			line-height: 5rem;
+			font-weight: 400;
+			font-family: var(--font2);
+		}
+
+		.heres-the-deal {
+
+			display: flex;
+			flex-direction: column;
+			gap: 3rem;
+
+			h2 {
+				font-size: 2rem;
+				font-weight: 500;
+			}
+
+			> .content {
+
+				font-size: 1.1rem;
+				font-weight: 400;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+				text-align: left;
+				line-height: 2rem;
+			}
+		}
+	}
+
+	#how {
+
+		> .content {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+
+			> .content {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				line-height: 2rem;
+			}
+		}
+
+		h2 {
+			font-size: 8rem;
+			font-family: var(--font2);
+		}
+
+		h3 {
+			font-weight: 800;
+			font-size: 4rem;
+			color: var(--alt);
+
+			span {
+				font-weight: bold;
+			}
+		}
+	}
 }
