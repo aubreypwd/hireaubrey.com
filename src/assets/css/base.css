@@ -57,6 +57,9 @@ main {
 		border-top: 1px dashed var(--borders);
 		width: 100%;
 
+		background-image: url( '/assets/img/paper1.webp' );
+		background-repeat: repeat;
+
 		&:first-child {
 			border-top: none;
 		}
@@ -67,7 +70,7 @@ main {
 
 		&.textured {
 
-			background-image: url( '/assets/img/paper.webp' );
+			background-image: url( '/assets/img/paper2.webp' );
 			background-repeat: repeat;
 
 			> .content {
