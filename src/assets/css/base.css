@@ -183,6 +183,34 @@ main {
 				color: var(--alt3);
 			}
 		}
+
+		&.page {
+			> .content {
+
+				h1 {
+					font-family: var(--font-GoogleSans);
+					font-size: 6rem;
+					line-height: 6rem;
+					color: var(--alt3);
+					margin-bottom: 2rem;
+					font-weight: 600;
+					text-align: center;
+				}
+
+				h2 {
+					font-family: var(--font-Instrument);
+					font-weight: 500;
+					font-size: 4rem;
+					line-height: 4rem;
+					color: var(--alt);
+					margin: 4rem 0 2rem;
+				}
+
+				> .content-block {
+					gap: calc(var(--gap)/2);
+				}
+			}
+		}
 	}
 
 	#cta {
