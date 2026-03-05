@@ -1,4 +1,1 @@
-- [ ] Make `/src/images/**` always end up in the output dir as a optimized webp
-- [x] Add TinyCSS back and use that for CSS always
-- [ ] Why when `./llms.md` changes it doesn't update `llms.txt`?
-- [ ] Add https://www.11ty.dev/docs/plugins/image/ support
+- [ ] Re-direct 404's (maybe using Netlify?)
