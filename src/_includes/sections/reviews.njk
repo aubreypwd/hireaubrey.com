@@ -1,5 +1,5 @@
-<section id="reviews" class="white">
-	<div class="content full no-gap">
+<section id="reviews" class="{{ sections.reviews.section.class | default( 'white' ) }}">
+	<div class="content {{ sections.reviews.content.class | default( 'full no-gap' ) }}">
 		<ul class="testimonials">
 			{% for review in reviews %}
 				<li>

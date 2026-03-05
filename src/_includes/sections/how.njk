@@ -1,5 +1,5 @@
-<section id="how" class="textured">
-	<div class="content bordered">
+<section id="how" class="{{ sections.how.section.class | default( 'textured' ) }}">
+	<div class="content {{ sections.how.content.class | default( 'bordered' ) }}">
 
 		<h2>How it works</h2>
 
@@ -9,7 +9,7 @@
 			{{ "Unless you already have a website, we build a website that's _**directly aligned with your business's goals.**_ They're **lean**, **simple**, and _**you own it.**_ End our relationship? **Your website stays up.**" | markdown | safe }}
 
 			<p>
-				<a href="#" class="button">Learn more <span class="desktop">about how I build websites</span><span class="material-symbols-outlined">open_in_new</span></a>
+				<a href="/how-websites-are-built/#content" class="button">Learn more <span class="desktop">about how I build websites</span><span class="material-symbols-outlined">open_in_new</span></a>
 			</p>
 		</div>
 
