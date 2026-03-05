@@ -1,1 +1,2 @@
 - [ ] Re-direct 404's (maybe using Netlify?)
+- [ ] Have codex spell check everything
