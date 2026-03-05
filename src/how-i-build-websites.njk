@@ -1,0 +1,62 @@
+---
+{
+	layout: "layouts/base",
+	"title": "Dear burdened business owner",
+	"sections": {
+		"experience": {
+			"section": {
+				"class": "textured"
+			}
+		}
+	}
+}
+---
+
+{% include 'sections/intro.njk' %}
+
+{% set content %}
+
+Most business owners _**never meant to manage a website,**_ but that is what usually happens. You log in to make a small change and suddenly there is a ****plugin to update.**** The ****theme breaks.**** Something else needs configuring. Now you are ****troubleshooting a system you never wanted**** to deal with in the first place.
+
+Bloated website platforms promise convenience, but they usually come with dashboards, logins, updates, subscriptions, and ongoing maintenance ****you have to do yourself.**** Over time the website quietly becomes ****another tool you have to manage.****
+
+_****Your website should support your business.****_
+
+**Not be a drag to operate.**
+
+I build _most_ websites **without those platforms** _on purpose._
+
+They're build statically using **[JAMStack](https://jamstack.org)** technologies whenever possible.
+
+**No** dashboards to figure out.
+
+**No** bloated overhead slowing your site down.
+
+**No** software to maintain.
+
+<hr>
+
+**You focus on running your business.**
+
+_I take care of your website._
+
+{% include 'book-button.njk' %}
+
+{% endset %}
+
+{% include 'sections/how.njk' %}
+
+<section id="content" class="page">
+	<div class="content bordered how-websites-are-built narrow">
+
+		<h1>Dear burdened business owner,</h1>
+
+		<div class="content-block">
+			{{ content | replace( "\t", '' ) | markdown | safe }}
+		</div>
+	</div>
+</section>
+
+{% include 'sections/experience.njk' %}
+{% include 'sections/reviews.njk' %}
+{% include 'sections/cta.njk' %}

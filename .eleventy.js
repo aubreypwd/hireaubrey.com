@@ -50,8 +50,8 @@ module.exports = async function ( eleventyConfig ) {
 				legalComments: 'none',
 
 				// Allow debugging at least.
-				minify: ( process.env.ELEVENTY_ENV === 'production' ) ? true : false,
-				sourcemap: ( process.env.ELEVENTY_ENV === 'production' ) ? false : true ,
+				minify: ( 'build' === process.env.npm_lifecycle_event ) ? true : false,
+				sourcemap: ( 'build' === process.env.npm_lifecycle_event ) ? false : true ,
 			} );
 
 			// Write the file esbuild gave us.
@@ -170,7 +170,7 @@ module.exports = async function ( eleventyConfig ) {
 		outputDir: path.join( config.dir.output, 'assets/img' ),
 		urlPath: '/assets/img',
 		formats: [ 'avif', 'webp', 'jpeg' ],
-		transformOnRequest: ( process.env.ELEVENTY_ENV === 'production' ) ? false : true,
+		transformOnRequest: ( 'build' === process.env.npm_lifecycle_event ) ? false : true,
 		useCache: false,
 		widths: [
 			// 320,
