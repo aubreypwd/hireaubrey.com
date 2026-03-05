@@ -235,6 +235,7 @@ module.exports = async function ( eleventyConfig ) {
 		sortClassName: false
 	} );
 
+	// Inline Google Font CSS.
 	eleventyConfig.addPlugin( require( 'eleventy-google-fonts' ) );
 
 	// Sanitize.css
