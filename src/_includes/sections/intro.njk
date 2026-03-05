@@ -1,0 +1,28 @@
+<section id="intro">
+	<div class="content bordered">
+
+		<div>
+			<div class="status"><span></span>Available for work</div>
+		</div>
+
+		<div class="who-am-i">
+			<div class="header-content">
+				<div class="heading-and-title">
+					<h1 class="main-heading">I'm Aubrey.</h1>
+					<p class="title">Web Developer / Designer</p>
+				</div>
+
+				{{ "I _build and maintain_ websites for people who are **sick of doing it themselves** who wish they had someone **on their team** to take care of it." | markdown | safe }}
+			</div>
+
+			<img src="/assets/img/aubrey.jpg" alt="Aubrey Portwood" onload="setTimeout( () => this.classList.add( 'loaded' ), 1000 )">
+		</div>
+
+		<ol class="you-run-your-business">
+			<li>You run your business.</li>
+			<li>I'll run the website.</li>
+		</ol>
+
+		{% include 'book-button.njk' %}
+	</div>
+</section>

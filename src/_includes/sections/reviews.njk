@@ -1,0 +1,16 @@
+<section id="reviews" class="white">
+	<div class="content full no-gap">
+		<ul class="testimonials">
+			{% for review in reviews %}
+				<li>
+					<span class="icon">&rdquo;</span>
+					<span class="quote">&ldquo;{{ review.quote }}&rdquo;</span>
+					<div class="name-and-company">
+						<span class="name">{{ review.name }}</span>
+						<span class="company">{{ review.company }}</span>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
