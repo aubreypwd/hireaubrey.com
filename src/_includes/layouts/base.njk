@@ -8,6 +8,9 @@
 <html lang="{{ site.lang or 'en-US' }}">
 	<head>
 
+		<link rel="preload" as="image" href="/assets/img/aubrey.webp">
+		<link rel="preload" as="image" href="/assets/img/paper-white.webp">
+
 		{% if title or site.title %}
 			<title>{% if title %}{{ title }}{% endif %}{% if site.title and title %} - {% endif %}{% if site.title %}{{ site.title }}{% endif %}</title>
 		{% endif %}
@@ -24,7 +27,6 @@
 			twitter_handle: site.metagen.twitter or '',
 			name: site.metagen.author or ''
 		} %}
-
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
