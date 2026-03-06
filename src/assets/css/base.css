@@ -70,7 +70,7 @@ main {
 		border-top: 1px dashed var(--borders);
 		width: 100%;
 
-		background-image: url( '/assets/img/paper-white-low.webp' );
+		background-image: url( '/assets/img/paper-white.webp' );
 
 		background-repeat: repeat;
 
