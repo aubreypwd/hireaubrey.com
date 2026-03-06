@@ -40,8 +40,6 @@ They're build statically using **[JAMStack](https://jamstack.org)** technologies
 
 _I take care of your website._
 
-{% include 'book-button.njk' %}
-
 {% endset %}
 
 {% include 'sections/how.njk' %}
@@ -53,6 +51,8 @@ _I take care of your website._
 
 		<div class="content-block">
 			{{ content | replace( "\t", '' ) | markdown | safe }}
+
+			{% include 'book-button.njk' %}
 		</div>
 	</div>
 </section>
