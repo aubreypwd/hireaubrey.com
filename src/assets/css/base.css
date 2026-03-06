@@ -410,16 +410,6 @@ main {
 			gap: var(--gap);
 			align-items: center;
 
-			animation: scroll-testimonials linear infinite;
-
-			@media ( max-width: 1200px ) {
-				animation: scroll-testimonials linear infinite;
-			}
-
-			&:hover {
-				animation-play-state: paused;
-			}
-
 			li {
 				display: block;
 
@@ -446,9 +436,11 @@ main {
 				transition: transform 0.3s ease-in-out,
 					border 0.3s ease-in-out;
 
-				&:hover {
-					transform: scale(1.1);
-					border-color: var(--borders);
+				@media ( min-width: 1200px ) {
+					&:hover {
+						transform: scale(1.1);
+						border-color: var(--borders);
+					}
 				}
 
 				position: relative;
