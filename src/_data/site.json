@@ -1,11 +1,47 @@
 {
-	"baseUrl": "https://example.com",
+	"baseUrl": "https://hireaubrey.com",
 	"lang": "en-US",
 	"title": "Hire Aubrey - Website Builds & Maintenance",
 	"metagen": {
-		"desc": "",
-		"img": "",
+		"desc": "Website Development and Design by Aubrey Portwood, Freelancer / Contractor.",
+		"img": "/assets/img/aubrey.webp",
 		"twitter": "aubreypwd",
 		"author": "Aubrey Portwood"
-	}
+	},
+	"jobTitle": "Web Development and Designer",
+	"telephone": "+13142827391",
+	"email": "cerise.matron37@icloud.com",
+	"knowsAbout": [
+		"Web Design",
+		"Web Development",
+		"WordPress",
+		"JAMStack",
+		"Static Websites",
+		"Albuquerque",
+		"Rio Rancho",
+		"Las Cruces",
+		"Website Maintenance"
+	],
+	"businessName": "Websites by Aubrey",
+	"services": [
+		{
+			"id": "WebDesign",
+			"name": "Website Design",
+			"description": "Website Design",
+			"serviceType": "Website Design"
+		},
+		{
+			"id": "WebDevelopment",
+			"name": "Website Development",
+			"description": "Website Development",
+			"serviceType": "Website Development"
+		},
+		{
+			"id": "Management",
+			"name": "Website Management",
+			"description": "Website Management",
+			"serviceType": "Website Management"
+		}
+	],
+	"areaServed": "Albuquerque, New Mexico"
 }

@@ -54,6 +54,8 @@
 		{% if ga4.id or ga4.force %}
 			{% ga4 ga4.id, { force: ga4.force } %}
 		{% endif %}
+
+		{% include 'jsonld.njk' %}
 	</head>
 
 	<body class="{{ body.class | default( '' ) }}">

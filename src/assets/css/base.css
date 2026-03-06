@@ -756,8 +756,8 @@ main {
 
 		display: inline-block;
 		background-color: #00cd00;
-		height: clamp(5px,3vw,10px);
-		width: clamp(5px,3vw,10px);
+		height: clamp(5px,3vw,9px);
+		width: clamp(5px,3vw,9px);
 		border-radius: 50%;
 		margin-right: 0.5rem;
 

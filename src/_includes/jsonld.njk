@@ -1,0 +1,89 @@
+{% jsonld
+	'WebSite',
+	site.baseUrl + '/#WebSite',
+	{
+		name: site.title,
+		url: site.baseUrl + '/',
+		inLanguage: site.lang
+	}
+%}
+
+{% jsonld
+	'WebPage',
+	( site.baseUrl + page.url ) + '#WebPage',
+	{
+		name: page.title | default( site.title ),
+		url: site.baseUrl + page.url,
+		description: page.description | default( site.meta.desc ),
+		inLanguage: site.lang,
+		isPartOf: { "@id": site.baseUrl + '/#WebSite' },
+		about: { "@id": site.baseUrl + '/#Person' }
+	}
+%}
+
+{% jsonld
+	'Person',
+	site.baseUrl + '/#Person',
+	{
+		name: site.metagen.author,
+		jobTitle: site.jobTitle,
+		url: site.baseUrl + '/',
+		telephone: site.telephone,
+		email: site.email,
+		sameAs: site.sameAs,
+		knowsAbout: site.knowsAbout
+	}
+%}
+
+{% set reviewList = [] %}
+{% for review in reviews or [] %}
+	{% set reviewList = reviewList.concat( [
+		{
+			"@type": "Review",
+			"author": {
+				"@type": "Person",
+				"name": review.name,
+				"jobTitle": review.company
+			},
+			"reviewBody": review.quote,
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": 5,
+				"bestRating": 5
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": review.company
+			}
+		}
+	] ) %}
+{% endfor %}
+
+{% jsonld
+	'LocalBusiness',
+	site.baseUrl + '/#LocalBusiness',
+	{
+		name: site.businessName,
+		description: site.meta.desc,
+		url: site.baseUrl,
+		telephone: site.telephone,
+		areaServed: site.areaServed,
+		sameAs: site.sameAs,
+		address: site.address,
+		openingHours: site.openingHours,
+		review: reviewList
+	}
+%}
+
+{% for service in site.services %}
+	{% jsonld
+	'Service',
+		site.baseUrl + '#service-' + service.id,
+		{
+			name: item.name,
+			description: item.description,
+			serviceType: item.serviceType,
+			provider: { "@id": site.baseUrl + '/#LocalBusiness' }
+		}
+	%}
+{% endfor %}
