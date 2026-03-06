@@ -1,6 +1,5 @@
 ---
 {
-	bootstrap: true,
 	markdown: false
 }
 ---
@@ -11,29 +10,31 @@
 		<link rel="preload" as="image" href="/assets/img/aubrey.webp">
 		<link rel="preload" as="image" href="/assets/img/paper-white.webp">
 
-		{% if title or site.title %}
-			<title>{% if title %}{{ title }}{% endif %}{% if site.title and title %} - {% endif %}{% if site.title %}{{ site.title }}{% endif %}</title>
-		{% endif %}
-
 		<meta name="viewport" content="{{ site.meta.viewport.content | default ( 'width=device-width, initial-scale=1' ) }}">
 
+		{% set title %}{% if title %}{{ title }}{% endif %}{% if site.title and title %} - {% endif %}{% if site.title %}{{ site.title }}{% endif %}{% endset %}
+
+		{% favicons 'src/favicon.png', appleIconBgColor='#fff' %}
+
 		{% metagen {
-			title: false,
+			title: title,
 			url: site.baseUrl + page.url,
 			desc: site.metagen.desc or '',
 			img: site.baseUrl + site.metagen.img,
 			img_alt: site.title,
 			twitter_card_type: 'summary_large_image',
 			twitter_handle: site.metagen.twitter or '',
-			name: site.metagen.author or ''
+			name: site.metagen.author or '',
+			generator: eleventy.generator
 		} %}
 
-		{% eleventyGoogleFonts 'https://fonts.googleapis.com/css2'
-			+ '?family=Google+Sans+Flex:opsz,wght@6..144,1..1000'
+		{% eleventyGoogleFonts 'https://fonts.googleapis.com/css2?'
+			+ 'family=Google+Sans+Flex:opsz,wght@6..144,1..1000'
 			+ '&family=Instrument+Serif:ital@0;1'
 			+ '&family=Caveat:wght@400..700'
 			+ '&family=Material+Symbols+Outlined'
-			+ '&display=swap' %}
+			+ '&display=swap'
+		%}
 
 		<link rel="stylesheet" href="/assets/css/sanitize.css/assets.css">
 		<link rel="stylesheet" href="/assets/css/sanitize.css/forms.css">

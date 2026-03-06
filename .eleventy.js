@@ -241,5 +241,8 @@ module.exports = async function ( eleventyConfig ) {
 	// Sanitize.css
 	eleventyConfig.addPassthroughCopy( { 'node_modules/sanitize.css/*.css': 'assets/css/sanitize.css' } );
 
+	// https://github.com/NJAldwin/eleventy-plugin-gen-favicons
+	eleventyConfig.addPlugin( require( 'eleventy-plugin-gen-favicons' ) );
+
 	return config;
 };
