@@ -142,7 +142,7 @@ main {
 			}
 
 			&.compact {
-				padding: calc(var(--sides)/4) calc(var(--sides)/4);
+				padding: 1.5rem 0
 			}
 
 			&.centered {
@@ -250,10 +250,6 @@ main {
 			font-size: 1rem;
 		}
 
-		> .content {
-			padding: 1.5rem 0;
-		}
-
 		img {
 			height: 20px;
 			width: 20px;
@@ -353,11 +349,12 @@ main {
 					color: white;
 					font-family: var(--font-Instrument);
 					font-size: clamp(1.5rem, 5vw, 4rem);
+					font-weight: 400;
 				}
 
 				.where {
 					font-size: clamp(0.1rem,2vw,1rem);
-					font-weight: bold;
+					font-weight: 600;
 				}
 			}
 		}
@@ -496,7 +493,7 @@ main {
 		font-style: normal;
 		text-decoration: underline;
 		text-decoration-color: #dadada;
-		text-decoration-thickness: 2.5px;
+		text-decoration-thickness: 3.5px;
 
 		&.b {
 			font-weight: bold;
@@ -514,6 +511,50 @@ main {
 	}
 
 	#intro {
+
+		.status-and-headline {
+
+			display: flex;
+			gap: calc(var(--gap)/2);
+			align-items: flex-start;
+
+			@media (max-width: 1200px) {
+				flex-direction: column;
+				align-items: center;
+				gap: calc(var(--gap)/2);
+			}
+
+			.headline {
+
+				font-size: clamp(0.5rem,4vw,0.9rem);
+				line-height: clamp(0.5rem,4vw,0.9rem);
+				vertical-align: middle;
+
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+
+				position: relative;
+				top: 7px;
+
+				@media (max-width: 1200px) {
+					top: 0;
+				}
+
+				.material-symbols-outlined {
+					font-size: 1rem;
+					color: var(--alt2);
+				}
+
+				a {
+					color: var(--alt2);
+
+					&:hover {
+						color: var(--alt);
+					}
+				}
+			}
+		}
 
 		.you-run-your-business {
 
@@ -703,19 +744,20 @@ main {
 		calc(1rem/3)
 		0.7rem;
 
-	font-size: clamp(0.7rem,2.5vw,0.9rem);
+	font-size: clamp(0.6rem,4vw,0.8rem);
 	display: inline-block;
 	color: var(--alt3);
 
 	@media ( max-width: 1200px ) {
-		margin-bottom: 1rem;
+		/* margin-bottom: 1rem; */
 	}
 
 	span {
+
 		display: inline-block;
 		background-color: #00cd00;
-		height: 10px;
-		width: 10px;
+		height: clamp(5px,3vw,10px);
+		width: clamp(5px,3vw,10px);
 		border-radius: 50%;
 		margin-right: 0.5rem;
 
