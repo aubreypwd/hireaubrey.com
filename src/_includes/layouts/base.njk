@@ -7,8 +7,9 @@
 <html lang="{{ site.lang or 'en-US' }}">
 	<head>
 
-		<link rel="preload" as="image" href="/assets/img/aubrey.webp">
+		<link rel="preload" as="image" href="/assets/img/aubrey-low.webp">
 		<link rel="preload" as="image" href="/assets/img/paper-white.webp">
+		<link rel="preload" as="font" href="https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zsTjnTLgNuZ5w.woff2">
 
 		<meta name="viewport" content="{{ site.meta.viewport.content | default ( 'width=device-width, initial-scale=1' ) }}">
 
@@ -31,10 +32,10 @@
 		{% eleventyGoogleFonts 'https://fonts.googleapis.com/css2?'
 			+ 'family=Google+Sans+Flex:opsz,wght@6..144,1..1000'
 			+ '&family=Instrument+Serif:ital@0;1'
-			+ '&family=Caveat:wght@400..700'
-			+ '&family=Material+Symbols+Outlined'
 			+ '&display=swap'
 		%}
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" media="print">
 
 		<link rel="stylesheet" href="/assets/css/sanitize.css/assets.css">
 		<link rel="stylesheet" href="/assets/css/sanitize.css/forms.css">
