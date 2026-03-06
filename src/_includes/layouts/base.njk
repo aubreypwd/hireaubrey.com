@@ -19,27 +19,21 @@
 
 		{% metagen {
 			title: false,
-			url: site.config.baseUrl + page.url,
+			url: site.baseUrl + page.url,
 			desc: site.metagen.desc or '',
-			img: site.config.baseUrl + site.metagen.img,
+			img: site.baseUrl + site.metagen.img,
 			img_alt: site.title,
 			twitter_card_type: 'summary_large_image',
 			twitter_handle: site.metagen.twitter or '',
 			name: site.metagen.author or ''
 		} %}
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-		{% eleventyGoogleFonts 'https://fonts.googleapis.com/css2?&family=Material+Symbols+Outlined&display=swap' %}
-
 		{% eleventyGoogleFonts 'https://fonts.googleapis.com/css2'
 			+ '?family=Google+Sans+Flex:opsz,wght@6..144,1..1000'
 			+ '&family=Instrument+Serif:ital@0;1'
 			+ '&family=Caveat:wght@400..700'
+			+ '&family=Material+Symbols+Outlined'
 			+ '&display=swap' %}
-
-		<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="/assets/css/sanitize.css/assets.css">
 		<link rel="stylesheet" href="/assets/css/sanitize.css/forms.css">
