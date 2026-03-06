@@ -19,7 +19,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "rimraf _site/ && node --inspect ./node_modules/@11ty/eleventy/cmd.cjs --serve",
-    "build": "rimraf _site/ && node ./node_modules/@11ty/eleventy/cmd.cjs",
+    "build": "rimraf _site/ && eleventy",
     "postinstall": "npm run tools",
     "tools": "if [ -d ./11ty-tools/.git ]; then npm link ./11ty-tools; fi"
   },
