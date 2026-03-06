@@ -2,7 +2,6 @@
 
 	--font-GoogleSans: "Google Sans Flex", sans-serif;
 	--font-Instrument: "Instrument Serif", serif;
-	--font-Allura: "Allura", cursive;
 
 	--alt: #198cff;
 	--borders: #d5d5d5;
@@ -163,7 +162,7 @@ main {
 				line-height: clamp(2rem,10vw,6rem);
 
 				font-weight: 500;
-				font-family: var(--font-Instrument);
+				font-family: "Instrument Serif", serif;
 				color: black;
 			}
 
@@ -172,7 +171,7 @@ main {
 
 				font-weight: 600;
 				color: var(--alt3);
-				font-family: var(--font-GoogleSans);
+				font-family: "Google Sans Flex", sans-serif;
 
 				> strong {
 					font-weight: 800;
@@ -214,7 +213,7 @@ main {
 				}
 
 				h1 {
-					font-family: var(--font-GoogleSans);
+					font-family: "Google Sans Flex", sans-serif;
 					font-size: clamp(2rem,4vw,4rem);
 					line-height: clamp(2.3rem,4.3vw,4.3rem);
 					color: var(--alt3);
@@ -224,7 +223,7 @@ main {
 				}
 
 				h2 {
-					font-family: var(--font-Instrument);
+					font-family: "Instrument Serif", serif;
 					font-weight: 500;
 					font-size: 4rem;
 					line-height: 4rem;
@@ -245,7 +244,7 @@ main {
 			font-size: clamp(3rem,11vw,6rem);
 
 			span {
-				font-family: var(--font-GoogleSans);
+				font-family: "Google Sans Flex", sans-serif;
 				font-weight: 600;
 			}
 		}
@@ -276,7 +275,7 @@ main {
 			color: var(--alt3);
 
 			em {
-				font-family: var(--font-Instrument);
+				font-family: "Instrument Serif", serif;
 				font-size: clamp(1.5rem,5.5vw,2.5rem);
 				font-weight: 700;
 			}
@@ -294,7 +293,7 @@ main {
 			font-size: clamp(1.5rem,5vw,3rem);
 			line-height: clamp(2rem,5.5vw,3.5rem);
 			color: var(--alt3);
-			font-family: var(--font-GoogleSans);
+			font-family: "Google Sans Flex", sans-serif;
 		}
 
 		.progress {
@@ -356,7 +355,7 @@ main {
 
 			 .years {
 					color: white;
-					font-family: var(--font-Instrument);
+					font-family: "Instrument Serif", serif;
 					font-size: clamp(1.5rem, 5vw, 4rem);
 					font-weight: 400;
 				}
@@ -458,7 +457,7 @@ main {
 
 					font-size: 10rem;
 					line-height: 2rem;
-					font-family: var(--font-Instrument);
+					font-family: "Instrument Serif", serif;
 					color: black;
 
 					position: absolute;
@@ -633,7 +632,7 @@ main {
 					font-size: clamp(2rem,15vw,8rem);
 					line-height: clamp(2.5rem,20vw,7rem);
 					font-weight: 500;
-					font-family: var(--font-Instrument);
+					font-family: "Instrument Serif", serif;
 				}
 
 				.title {
