@@ -651,17 +651,11 @@ main {
 
 				img {
 
+					background-color: black;
+
 					border: 1px solid var(--alt2);
-					/* filter: brightness(120%) grayscale(1); */
-
-					transition: filter 1s ease-in-out;
-
-					&.loaded {
-						/* filter: brightness(110%) grayscale(0); */
-					}
-
+					filter: brightness(110%);
 					border-radius: clamp(2rem,3vw,5rem);
-
 					width: 100%;
 					height: auto;
 				}
