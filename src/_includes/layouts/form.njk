@@ -1,0 +1,90 @@
+---
+{
+	layout: "layouts/base",
+	markdown: false
+}
+---
+
+<form>
+	<section id="content" class="page textured">
+		<div class="content bordered">
+			<h1>{{ title }}</h1>
+
+			<div class="content-block">
+				{% if description %}
+					{{ description | markdown | safe }}
+				{% endif %}
+			</div>
+		</div>
+	</section>
+
+	{% for section in form %}
+		<section class="page {{ section.class }}">
+			<div class="content bordered">
+				<h2>{{ section.title }}</h2>
+
+				{% if section.description %}
+					<div class="description">{{ section.description | markdown | safe }}</div>
+				{% endif %}
+
+				<div class="content-block">
+					<hr>
+
+					{% for field in section.fields %}
+						{% if 'checkbox' != field.type %}
+							<label for="{{ field.label }}">{{ field.label }}</label>
+						{% else %}
+							<div class="label">{{ field.label }}</div>
+						{% endif %}
+
+						{% if 'textarea' == field.type %}
+							<textarea name="{{ field.label }}"
+								id="{{ field.label }}"
+								placeholder="{{ field.placeholder }}"
+								autocomplete="{{ field.autocomplete | default( 'off' ) }}"
+								{% if field.required %}required{% endif %}
+							></textarea>
+						{% elseif 'text' == field.type or 'email' == field.type %}
+							<input
+								type="{{ field.type }}"
+								id="{{ field.label }}"
+								placeholder="{{ field.placeholder }}"
+								autocomplete="{{ field.autocomplete | default( 'on' ) }}"
+								{% if field.required %}required{% endif %}
+							>
+						{% elseif 'select' == field.type %}
+							<select
+								name="{{ field.label }}"
+								id="{{ field.label }}"
+								placeholder="{{ field.placeholder }}"
+								autocomplete="{{ field.autocomplete | default( 'off' ) }}"
+								{% if field.required %}required{% endif %}
+							>
+								{% for option in field.options %}
+									<option value="{{ option }}">{{ option }}</option>
+								{% endfor %}
+							</select>
+						{% elseif 'checkbox' == field.type %}
+							{% for option in field.options %}
+								<div class="checkbox">
+									<label class="checkbox" for="{{ form.label }}">
+										<input
+											type="checkbox"
+											name="{{ field.label }}[{{ option }}][]"
+											id="{{ field.label }}[{{ option }}]"
+											placeholder="{{ field.placeholder }}"
+											autocomplete="{{ field.autocomplete | default( 'off' ) }}"
+											{% if field.required %}required{% endif %}
+										> {{ option }}
+									</label>
+								</div>
+							{% endfor %}
+						{% endif %}
+
+						<div class="description">{{ field.description | markdown | safe }}</div>
+					{% endfor %}
+				</div>
+		</div>
+	</section>
+{% endfor %}
+</form>

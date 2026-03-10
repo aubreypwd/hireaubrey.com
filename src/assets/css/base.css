@@ -64,7 +64,56 @@ main {
 	gap: 0;
 	align-items: center;
 
-	> section {
+	form {
+		width: 100%;
+
+		label:not(.checkbox),
+		div.label:not(.checkbox) {
+			color: var(--alt3);
+		}
+
+		.description {
+			color: var(--alt2);
+			font-size: 1.2rem;
+		}
+
+		.checkbox {
+			display: flex;
+			flex-direction: row;
+			gap: 0.5rem;
+			align-items: center;
+			font-size: 1.2rem;
+		}
+
+		textarea,
+		input,
+		select {
+			background-color: white;
+			border: 1px solid var(--alt2);
+			border-radius: 0.7rem !important;
+			padding: 1rem;
+			font-family: var(--font-GoogleSans);
+			font-size: 1.2rem;
+
+			&[type="checkbox"] {
+				height: 1.5rem;
+				width: 1.5rem;
+			}
+		}
+
+		select {
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		}
+
+		textarea {
+			min-height: 15rem;
+		}
+	}
+
+	> section,
+	form > section {
 
 		background: white;
 		border-top: 1px dashed var(--borders);

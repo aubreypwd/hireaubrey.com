@@ -1,0 +1,47 @@
+---
+{
+	layout: "layouts/form",
+	title: "Website Build Questionnaire",
+	description: "This is the form description.",
+	form: [
+		{
+			title: "My website will need",
+			description: "Check any that might apply.",
+			class: "",
+			fields: [
+				{
+					type: "textarea",
+					label: "Summary",
+					description: "Please explain your website project."
+				},
+				{
+					type: "email",
+					label: "Input",
+					description: "Your input.",
+					required: true
+				},
+				{
+					type: "select",
+					label: "SelectA",
+					description: "From these.",
+					required: true,
+					options: [
+						"Option A",
+						"Option B",
+					]
+				},
+				{
+					type: "checkbox",
+					label: "Checkbox",
+					description: "Choose all that apply",
+					required: false,
+					options: [
+						"Option A",
+						"Option B",
+					]
+				}
+			]
+		}
+	]
+}
+---
