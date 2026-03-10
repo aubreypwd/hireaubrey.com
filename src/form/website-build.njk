@@ -3,6 +3,7 @@
 	layout: "layouts/form",
 	title: "Website Build Questionnaire",
 	description: "This is the form description.",
+	sent: "Thanks for taking the time to fill out this questionnaire, it was sent!",
 	form: [
 		{
 			title: "My website will need",
@@ -11,19 +12,19 @@
 			fields: [
 				{
 					type: "textarea",
-					label: "Summary",
-					description: "Please explain your website project."
+					label: "Textarea",
+					description: "This is the description of a textarea."
 				},
 				{
 					type: "email",
-					label: "Input",
-					description: "Your input.",
+					label: "Email Input",
+					description: "This is an email input.",
 					required: true
 				},
 				{
 					type: "select",
-					label: "SelectA",
-					description: "From these.",
+					label: "Select",
+					description: "This is a select.",
 					required: true,
 					options: [
 						"Option A",
@@ -33,7 +34,7 @@
 				{
 					type: "checkbox",
 					label: "Checkbox",
-					description: "Choose all that apply",
+					description: "This is a checkbox.",
 					required: false,
 					options: [
 						"Option A",

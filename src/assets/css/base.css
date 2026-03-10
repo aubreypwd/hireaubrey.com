@@ -54,6 +54,10 @@ a {
 	color: var(--alt);
 }
 
+.hidden {
+	display: none;
+}
+
 main {
 
 	margin-top: 0;
@@ -65,7 +69,31 @@ main {
 	align-items: center;
 
 	form {
+
 		width: 100%;
+
+		input:invalid:not(:placeholder-shown),
+		textarea:invalid:not(:placeholder-shown),
+		select:invalid:not(:placeholder-shown),
+		input.error,
+		textarea.error,
+		select.error {
+			border-color: red;
+			background: #ffe6e6;
+		}
+
+		.sent {
+
+			background-color: var(--green);
+			color: white;
+			padding: 0.5rem 1rem;
+			border-radius: 0.2rem;
+
+			> * {
+				font-size: 1.7rem;
+				font-weight: 700;
+			}
+		}
 
 		label:not(.checkbox),
 		div.label:not(.checkbox) {
@@ -736,7 +764,8 @@ main {
 	}
 }
 
-.button {
+.button,
+button {
 
 	background-color: var(--alt);
 	color: white;
@@ -744,6 +773,7 @@ main {
 
 	text-decoration: none;
 	border-radius: 2px;
+	border-color: transparent;
 	transition: box-shadow 0.1s ease-in;
 
 	padding: 0.7rem 1.2rem;

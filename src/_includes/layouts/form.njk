@@ -5,7 +5,12 @@
 }
 ---
 
-<form>
+<form
+	action="{{ page.url }}?sent"
+	name="{{ title }}"
+	method="POST"
+	netlify
+>
 	<section id="content" class="page textured">
 		<div class="content bordered">
 			<h1>{{ title }}</h1>
@@ -15,6 +20,15 @@
 					{{ description | markdown | safe }}
 				{% endif %}
 			</div>
+
+			<div id="sent" class="sent hidden">
+				{{ sent | markdown | safe }}
+			</div>
+
+			<script>
+				if ( window.location.search.includes( '?sent' ) )
+					document.getElementById( 'sent' ).classList.remove( 'hidden' );
+			</script>
 		</div>
 	</section>
 
@@ -32,9 +46,9 @@
 
 					{% for field in section.fields %}
 						{% if 'checkbox' != field.type %}
-							<label for="{{ field.label }}">{{ field.label }}</label>
+							<label for="{{ field.label }}">{{ field.label }}{% if field.required %} <span class="required">(Required)</span>{% endif %}</label>
 						{% else %}
-							<div class="label">{{ field.label }}</div>
+							<div class="label">{{ field.label }}{% if field.required %} <span class="required">(Required)</span>{% endif %}</div>
 						{% endif %}
 
 						{% if 'textarea' == field.type %}
@@ -67,11 +81,11 @@
 						{% elseif 'checkbox' == field.type %}
 							{% for option in field.options %}
 								<div class="checkbox">
-									<label class="checkbox" for="{{ form.label }}">
+									<label class="checkbox" for="{{ field.label }}[{{ option }}][]">
 										<input
 											type="checkbox"
 											name="{{ field.label }}[{{ option }}][]"
-											id="{{ field.label }}[{{ option }}]"
+											id="{{ field.label }}[{{ option }}][]"
 											placeholder="{{ field.placeholder }}"
 											autocomplete="{{ field.autocomplete | default( 'off' ) }}"
 											{% if field.required %}required{% endif %}
@@ -83,6 +97,8 @@
 
 						<div class="description">{{ field.description | markdown | safe }}</div>
 					{% endfor %}
+
+					<p><button class="alt1" type="submit">Send <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m720-160-56-56 63-64H560v-80h167l-63-64 56-56 160 160-160 160ZM160-280q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h520q33 0 56.5 23.5T760-760v204q-10-2-20-3t-20-1q-10 0-20 .5t-20 2.5v-147L416-520 160-703v343h323q-2 10-2.5 20t-.5 20q0 10 1 20t3 20H160Zm58-480 198 142 204-142H218Zm-58 400v-400 400Z"/></svg></button></p>
 				</div>
 		</div>
 	</section>
