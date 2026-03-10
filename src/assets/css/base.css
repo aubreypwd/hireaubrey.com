@@ -72,14 +72,25 @@ main {
 
 		width: 100%;
 
+		input,
+		textarea,
+		select {
+			transition: background-color 0.5s ease;
+		}
+
 		input:invalid:not(:placeholder-shown),
 		textarea:invalid:not(:placeholder-shown),
 		select:invalid:not(:placeholder-shown),
 		input.error,
 		textarea.error,
 		select.error {
-			border-color: red;
-			background: #ffe6e6;
+			background-color: #ffe6e6;
+		}
+
+		input:valid:not(:placeholder-shown),
+		textarea:valid:not(:placeholder-shown),
+		select:valid:not(:placeholder-shown) {
+			background-color: #e4f4e4;
 		}
 
 		.sent {
@@ -106,6 +117,7 @@ main {
 		}
 
 		.checkbox {
+
 			display: flex;
 			flex-direction: row;
 			gap: 0.5rem;

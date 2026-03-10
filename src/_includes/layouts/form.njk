@@ -6,11 +6,14 @@
 ---
 
 <form
-	action="{{ page.url }}?sent"
 	name="{{ title }}"
 	method="POST"
+	action="{{ page.url }}?sent"
+	data-netlify="true"
 	netlify
 >
+	<input type="hidden" name="form-name" value="{{ title }}">
+
 	<section id="content" class="page textured">
 		<div class="content bordered">
 			<h1>{{ title }}</h1>
@@ -26,13 +29,15 @@
 			</div>
 
 			<script>
-				if ( window.location.search.includes( '?sent' ) )
-					document.getElementById( 'sent' ).classList.remove( 'hidden' );
+				if (window.location.search.includes('?sent')) {
+					document.getElementById('sent').classList.remove('hidden');
+				}
 			</script>
 		</div>
 	</section>
 
 	{% for section in form %}
+		{% set sectionIndex = loop.index %}
 		<section class="page {{ section.class }}">
 			<div class="content bordered">
 				<h2>{{ section.title }}</h2>
@@ -45,62 +50,83 @@
 					<hr>
 
 					{% for field in section.fields %}
-						{% if 'checkbox' != field.type %}
-							<label for="{{ field.label }}">{{ field.label }}{% if field.required %} <span class="required">(Required)</span>{% endif %}</label>
+						{% set fieldIndex = loop.index %}
+						{% set fieldId = "field-" + sectionIndex + "-" + fieldIndex %}
+
+						{% if field.type != 'checkbox' %}
+							<label for="{{ fieldId }}">
+								{{ field.label }}{% if field.required %} <span class="required">(Required)</span>{% endif %}
+							</label>
 						{% else %}
-							<div class="label">{{ field.label }}{% if field.required %} <span class="required">(Required)</span>{% endif %}</div>
+							<div class="label">
+								{{ field.label }}{% if field.required %} <span class="required">(Required)</span>{% endif %}
+							</div>
 						{% endif %}
 
-						{% if 'textarea' == field.type %}
-							<textarea name="{{ field.label }}"
-								id="{{ field.label }}"
+						{% if field.type == 'textarea' %}
+							<textarea
+								name="{{ field.label }}"
+								id="{{ fieldId }}"
 								placeholder="{{ field.placeholder }}"
-								autocomplete="{{ field.autocomplete | default( 'off' ) }}"
+								autocomplete="{{ field.autocomplete | default('off') }}"
 								{% if field.required %}required{% endif %}
 							></textarea>
-						{% elseif 'text' == field.type or 'email' == field.type %}
+
+						{% elseif field.type == 'text' or field.type == 'email' %}
 							<input
 								type="{{ field.type }}"
-								id="{{ field.label }}"
+								name="{{ field.label }}"
+								id="{{ fieldId }}"
 								placeholder="{{ field.placeholder }}"
-								autocomplete="{{ field.autocomplete | default( 'on' ) }}"
+								autocomplete="{{ field.autocomplete | default('on') }}"
 								{% if field.required %}required{% endif %}
 							>
-						{% elseif 'select' == field.type %}
+
+						{% elseif field.type == 'select' %}
 							<select
 								name="{{ field.label }}"
-								id="{{ field.label }}"
-								placeholder="{{ field.placeholder }}"
-								autocomplete="{{ field.autocomplete | default( 'off' ) }}"
+								id="{{ fieldId }}"
+								autocomplete="{{ field.autocomplete | default('off') }}"
 								{% if field.required %}required{% endif %}
 							>
+								<option value="" disabled selected>{{ field.placeholder | default( 'Select an option' ) }}</option>
 								{% for option in field.options %}
 									<option value="{{ option }}">{{ option }}</option>
 								{% endfor %}
 							</select>
-						{% elseif 'checkbox' == field.type %}
+
+						{% elseif field.type == 'checkbox' %}
 							{% for option in field.options %}
+								{% set optionId = fieldId + "-" + loop.index %}
 								<div class="checkbox">
-									<label class="checkbox" for="{{ field.label }}[{{ option }}][]">
+									<label class="checkbox" for="{{ optionId }}">
 										<input
 											type="checkbox"
-											name="{{ field.label }}[{{ option }}][]"
-											id="{{ field.label }}[{{ option }}][]"
-											placeholder="{{ field.placeholder }}"
-											autocomplete="{{ field.autocomplete | default( 'off' ) }}"
-											{% if field.required %}required{% endif %}
+											name="{{ field.label }}"
+											id="{{ optionId }}"
+											value="{{ option }}"
+											autocomplete="{{ field.autocomplete | default('off') }}"
 										> {{ option }}
 									</label>
 								</div>
 							{% endfor %}
 						{% endif %}
 
-						<div class="description">{{ field.description | markdown | safe }}</div>
+						{% if field.description %}
+							<div class="description">{{ field.description | markdown | safe }}</div>
+						{% endif %}
 					{% endfor %}
 
-					<p><button class="alt1" type="submit">Send <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m720-160-56-56 63-64H560v-80h167l-63-64 56-56 160 160-160 160ZM160-280q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h520q33 0 56.5 23.5T760-760v204q-10-2-20-3t-20-1q-10 0-20 .5t-20 2.5v-147L416-520 160-703v343h323q-2 10-2.5 20t-.5 20q0 10 1 20t3 20H160Zm58-480 198 142 204-142H218Zm-58 400v-400 400Z"/></svg></button></p>
+					<p>
+						<button class="alt1" type="submit">
+							Send
+							<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+								<path d="m720-160-56-56 63-64H560v-80h167l-63-64 56-56 160 160-160 160ZM160-280q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h520q33 0 56.5 23.5T760-760v204q-10-2-20-3t-20-1q-10 0-20 .5t-20 2.5v-147L416-520 160-703v343h323q-2 10-2.5 20t-.5 20q0 10 1 20t3 20H160Zm58-480 198 142 204-142H218Zm-58 400v-400 400Z"/>
+							</svg>
+						</button>
+					</p>
 				</div>
-		</div>
-	</section>
-{% endfor %}
+			</div>
+		</section>
+	{% endfor %}
 </form>
