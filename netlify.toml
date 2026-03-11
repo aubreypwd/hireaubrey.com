@@ -4,3 +4,9 @@
   targetPort = 8081
   port = 8876
   publish = "_site"
+
+[[redirects]]
+  from = "/review"
+  to = "https://g.page/r/CXh1sbFmL49pEBM/review"
+  status = 301
+  force = true

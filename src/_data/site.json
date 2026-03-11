@@ -102,5 +102,11 @@
 			"serviceType": "Website Management"
 		}
 	],
-	"areaServed": "Albuquerque, New Mexico"
+	"areaServed": "Albuquerque, New Mexico",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Albuquerque",
+		"addressRegion": "NM",
+		"addressCountry": "US"
+	}
 }
