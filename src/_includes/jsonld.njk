@@ -35,30 +35,6 @@
 	}
 %}
 
-{% set reviewList = [] %}
-{% for review in reviews or [] %}
-	{% set reviewList = reviewList.concat( [
-		{
-			"@type": "Review",
-			"author": {
-				"@type": "Person",
-				"name": review.name,
-				"jobTitle": review.company
-			},
-			"reviewBody": review.quote,
-			"reviewRating": {
-				"@type": "Rating",
-				"ratingValue": 5.0,
-				"bestRating": 5.0
-			},
-			"publisher": {
-				"@type": "Organization",
-				"name": review.company
-			}
-		}
-	] ) %}
-{% endfor %}
-
 {% jsonld
 	'LocalBusiness',
 	site.baseUrl + '/#LocalBusiness',
@@ -73,13 +49,7 @@
 		areaServed: site.areaServed,
 		sameAs: site.sameAs,
 		address: site.address,
-		openingHours: site.openingHours,
-		review: reviewList,
-		aggregateRating: {
-			"@type": "AggregateRating",
-			ratingValue: 5.0,
-			reviewCount: reviews | length
-		}
+		openingHours: site.openingHours
 	}
 %}
 
