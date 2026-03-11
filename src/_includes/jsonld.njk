@@ -48,8 +48,8 @@
 			"reviewBody": review.quote,
 			"reviewRating": {
 				"@type": "Rating",
-				"ratingValue": 5,
-				"bestRating": 5
+				"ratingValue": 5.0,
+				"bestRating": 5.0
 			},
 			"publisher": {
 				"@type": "Organization",
@@ -63,15 +63,22 @@
 	'LocalBusiness',
 	site.baseUrl + '/#LocalBusiness',
 	{
+		image: site.metagen.img,
 		name: site.businessName,
 		description: site.meta.desc,
 		url: site.baseUrl,
 		telephone: site.telephone,
+		priceRange: "$$",
 		areaServed: site.areaServed,
 		sameAs: site.sameAs,
 		address: site.address,
 		openingHours: site.openingHours,
-		review: reviewList
+		review: reviewList,
+		aggregateRating: {
+			"@type": "AggregateRating",
+			ratingValue: 5.0,
+			reviewCount: reviews | length
+		}
 	}
 %}
 
