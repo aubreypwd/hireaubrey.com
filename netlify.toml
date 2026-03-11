@@ -1,0 +1,6 @@
+[dev]
+  framework = "#custom"
+  command = "npm run serve"
+  targetPort = 8081
+  port = 8876
+  publish = "_site"

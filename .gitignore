@@ -4,3 +4,5 @@
 .plugin-clean
 .sublime-project.sublime-workspace
 _site/
+# Local Netlify folder
+.netlify
