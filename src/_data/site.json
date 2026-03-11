@@ -1,9 +1,9 @@
 {
 	"baseUrl": "https://hireaubrey.com",
 	"lang": "en-US",
-	"title": "Websites by Aubrey Portwood",
+	"title": "Aubrey Portwood - Website Builds &amp; Maintenance",
 	"metagen": {
-		"desc": "Website Development, Design & Maintenance by Aubrey Portwood, Freelancer / Contractor.",
+		"desc": "Website Development, Design &amp; Maintenance by Aubrey Portwood, Freelancer / Contractor. Based in Albuquerque, New Mexico.",
 		"img": "/assets/img/aubrey.webp",
 		"twitter": "aubreypwd",
 		"author": "Aubrey Portwood"
@@ -90,7 +90,7 @@
 		"Las Cruces, New Mexico",
 		"Phoenix, Arizona"
 	],
-	"businessName": "Websites by Aubrey Portwood",
+	"businessName": "Aubrey Portwood",
 	"services": [
 		{
 			"id": "WebDesign",
