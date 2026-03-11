@@ -17,7 +17,7 @@
 		description: page.description | default( site.meta.desc ),
 		inLanguage: site.lang,
 		isPartOf: { "@id": site.baseUrl + '/#WebSite' },
-		about: { "@id": site.baseUrl + '/#Person' }
+		about: { "@id": site.baseUrl + '/#LocalBusiness' }
 	}
 %}
 
@@ -65,6 +65,7 @@
 	{
 		image: site.baseUrl + site.metagen.img,
 		name: site.businessName,
+		alternateName: site.metagen.author,
 		description: site.meta.desc,
 		url: site.baseUrl,
 		telephone: site.telephone,

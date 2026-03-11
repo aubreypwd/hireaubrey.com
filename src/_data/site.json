@@ -1,13 +1,21 @@
 {
 	"baseUrl": "https://hireaubrey.com",
 	"lang": "en-US",
-	"title": "Hire Aubrey - Website Builds & Maintenance",
+	"title": "Websites by Aubrey Portwood - Websites & Maintenance",
 	"metagen": {
 		"desc": "Website Development and Design by Aubrey Portwood, Freelancer / Contractor.",
 		"img": "/assets/img/aubrey.webp",
 		"twitter": "aubreypwd",
 		"author": "Aubrey Portwood"
 	},
+	"sameAs": [
+		"https://maps.app.goo.gl/uWk4YC41Z8J6AFEi8",
+		"https://share.google/rZFLJ3cLnwtVneGqi",
+		"https://twitter.com/aubreypwd",
+		"https://facebook.com/aubreypwd",
+		"https://linkedin.com/in/aubreypwd",
+		"https://aubreypwd.com"
+	],
 	"jobTitle": "Web Development and Designer",
 	"telephone": "+13142827391",
 	"email": "cerise.matron37@icloud.com",
@@ -81,7 +89,7 @@
 		"Las Cruces, New Mexico",
 		"Phoenix, Arizona"
 	],
-	"businessName": "Websites by Aubrey",
+	"businessName": "Websites by Aubrey Portwood",
 	"services": [
 		{
 			"id": "WebDesign",
