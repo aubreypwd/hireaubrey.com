@@ -19,7 +19,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "eleventy --serve",
-    "live": "netlify dev --live local",
+    "netlify": "netlify dev --live local",
+    "netlify-dev": "netlify dev",
     "build": "eleventy",
     "postinstall": "npm run tools",
     "tools": "if [ -d ./11ty-tools/.git ]; then npm link ./11ty-tools; fi"
