@@ -113,6 +113,7 @@
 	"areaServed": "Albuquerque, New Mexico",
 	"address": {
 		"@type": "PostalAddress",
+		"postalCode": "87114",
 		"addressLocality": "Albuquerque",
 		"addressRegion": "NM",
 		"addressCountry": "US"
