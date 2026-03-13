@@ -13,7 +13,7 @@
 
 		<meta name="viewport" content="{{ site.meta.viewport.content | default ( 'width=device-width, initial-scale=1' ) }}">
 
-		{% set title %}{% if title %}{{ title }}{% endif %}{% if site.title and title %} - {% endif %}{% if site.title %}{{ site.title }}{% endif %}{% endset %}
+		{% set title %}{% if title %}{{ title }}{% endif %}{% if site.title and title %} - {% endif %}{% if site.title %}{{ site.title }} - {{ site.jobTitle }}{% endif %}{% endset %}
 
 		{% favicons 'src/favicon.png', appleIconBgColor='#fff' %}
 
