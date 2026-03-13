@@ -238,8 +238,8 @@ main {
 
 	#cta {
 		h2 {
-			line-height: clamp(3rem,11vw,7rem);
-			font-size: clamp(3rem,11vw,6rem);
+			line-height: clamp(3rem,11vw,5rem);
+			font-size: clamp(3rem,11vw,4.5rem);
 
 			span {
 				font-family: "Google Sans Flex", sans-serif;
