@@ -246,6 +246,13 @@ main {
 				font-weight: 600;
 			}
 		}
+
+		.lead {
+			display: inline-block;
+			font-size: var(--p-size);
+			line-height: var(--p-height);
+			color: var(--alt2);
+		}
 	}
 
 	#footer {
@@ -263,6 +270,9 @@ main {
 			position: relative;
 			top: 3px;
 		}
+	}
+
+	#how {
 	}
 
 	#experience {
@@ -822,12 +832,12 @@ ul.pills {
 		text-transform: uppercase;
 		font-weight: 700;
 		font-size: 0.9rem;
-		background: var(--alt);
-		transition: filter 0.7s ease-in-out;
+		background: var(--alt2);
+		transition: background-color 0.7s ease-in-out;
 		width: fit-content;
 
 		&:hover {
-			filter: brightness(120%);
+			background-color: var(--alt3);
 			cursor: default;
 		}
 
