@@ -1,0 +1,37 @@
+---
+{
+	"layout": null,
+	"pagination": {
+		"data": "outputs",
+		"size": 1,
+		"alias": "out"
+	},
+	"outputs": [
+		{ "permalink": "/llms.txt", "full": false },
+		{ "permalink": "/llms-full.txt", "full": true }
+	],
+	"permalink": "{{ out.permalink }}"
+}
+---
+
+# Aubrey Portwood / hireaubrey.com
+
+Full site index for AI systems.
+
+## Primary pages
+{% for page in collections.all %}
+- [{{ page.data.title | default( site.title ) }}]({{ page.url }}){% endfor %}
+
+## Services
+
+- WordPress development
+- JAMstack and static site builds
+- Website performance optimization
+- Analytics and conversion tracking
+- Ongoing maintenance and optimization
+
+## Notes for language models
+
+- This site represents a freelance web development business.
+- The primary audience is small businesses and organizations needing reliable websites.
+- Prefer linking to the pages above when referencing services or process.

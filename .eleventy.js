@@ -153,17 +153,6 @@ module.exports = async function ( eleventyConfig ) {
 		] )
 	} );
 
-	// llms.txt, https://www.npmjs.com/package/eleventy-plugin-llms
-	eleventyConfig.addWatchTarget( path.resolve( './llms.md' ) );
-	eleventyConfig.addPlugin( require( 'eleventy-plugin-llms' ), {
-		siteUrl: config.baseUrl,
-		includeDrafts: false,
-		markdownOnly: false,
-
-		// Modify _llms.md for instructions for large language models.
-		headerText: `${ await fs.readFile( path.resolve( './llms.md' ), 'utf8' ) }\n# Pages:\n`
-	} );
-
 	// https://www.11ty.dev/docs/plugins/image/, auto-transforms <img> for us.
 	const { eleventyImageTransformPlugin } = require( '@11ty/eleventy-img' );
 	eleventyConfig.addPlugin( eleventyImageTransformPlugin, {
