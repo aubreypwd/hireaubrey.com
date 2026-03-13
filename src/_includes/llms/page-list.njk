@@ -1,0 +1,3 @@
+## Pages
+{% for page in collections.all %}
+- [{{ page.data.title | default(site.title) }}]({{ page.url }}){% endfor %}
