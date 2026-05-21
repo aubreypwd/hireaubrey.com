@@ -272,34 +272,23 @@ main {
 		}
 	}
 
-	#how {
-	}
-
 	#experience {
 
 		.claim {
 
-			font-size: clamp(1rem,5vw,2rem);
-			color: var(--alt3);
+			color: black;
+			font-size: clamp(1.5rem,5vw,2.7rem);
 
-			em {
-				font-family: "Instrument Serif", serif;
-				font-size: clamp(1.5rem,5.5vw,2.5rem);
-				font-weight: 700;
+			s {
+				color: var(--alt2);
+				font-weight: normal;
 			}
 		}
 
-		.microsoft {
-			color: var(--alt);
-		}
-
-		.monster {
-			color: rgb(113 27 113);
-		}
-
 		h2 {
-			font-size: clamp(1.5rem,5vw,3rem);
+			font-size: clamp(1rem,5vw,1.8rem);
 			line-height: clamp(2rem,5.5vw,3.5rem);
+
 			color: var(--alt3);
 			font-family: "Google Sans Flex", sans-serif;
 		}
@@ -320,27 +309,40 @@ main {
 				padding: 0.3rem;
 			}
 
-			.am {
+			.then {
 
-				width: 30%;
+				width: 25%;
 				background-color: #0e1b3c;
 				border-top-left-radius: 0.6rem;
 				border-bottom-left-radius: 0.6rem;
 
+				> * {
+					opacity: 0.8;
+				}
+
 				&:hover {
-					width: 35%;
+					width: 29%;
+				}
+
+				.years {
+					font-weight: 200;
+					font-style: italic;
 				}
 			}
 
-			.webdev {
+			.now {
 
-				width: 70%;
+				width: 75%;
 				background-color: #f2723c;
 				border-top-right-radius: 0.6rem;
 				border-bottom-right-radius: 0.6rem;
 
 				&:hover {
-					width: 75%;
+					width: 130%;
+				}
+
+				.years {
+					font-weight: bold;
 				}
 			}
 
@@ -357,6 +359,8 @@ main {
 				padding: calc(var(--gap)/2);
 				color: white;
 
+				overflow-x: hidden;
+
 				@media ( max-width: 1200px ) {
 					padding: calc(var(--gap)/2) calc(var(--gap)/4);
 				}
@@ -370,7 +374,6 @@ main {
 
 				.where {
 					font-size: clamp(0.1rem,2vw,1rem);
-					font-weight: 600;
 				}
 			}
 		}
@@ -825,7 +828,7 @@ ul.pills {
 
 	li {
 
-		padding: 0.8rem 0.9rem;
+		padding: 0.8rem 1rem;
 		border-radius: 2rem;
 		color: white;
 		font-family: var(--font-GoogleSans);
@@ -839,6 +842,15 @@ ul.pills {
 		&:hover {
 			background-color: var(--alt3);
 			cursor: default;
+		}
+
+		&.pillar {
+			background-color: var(--alt);
+			color: white;
+
+			&:hover {
+				background-color: var(--alt3);
+			}
 		}
 
 		@media (max-width: 1200px) {
