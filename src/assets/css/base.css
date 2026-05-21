@@ -238,7 +238,7 @@ main {
 
 	#cta {
 		h2 {
-			line-height: clamp(3rem,11vw,5rem);
+			line-height: clamp(3.2rem,12vw,5.3rem);
 			font-size: clamp(3rem,11vw,4.5rem);
 
 			span {
