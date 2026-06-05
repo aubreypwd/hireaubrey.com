@@ -664,7 +664,7 @@ main {
 				> div {
 
 					background-color: black;
-					background-image: url('/assets/img/aubrey.webp');
+					background-image: url('https://gravatar.webp.se/avatar/09601923fd59a7433892711376c37e41?s=940&q=85');
 					background-position: center center;
 					background-size: cover;
 
@@ -676,7 +676,7 @@ main {
 					height: 350px;
 
 					@media ( max-width: 640px ) {
-						background-image: url('/assets/img/aubrey-low.webp');
+						background-image: url('https://gravatar.webp.se/avatar/09601923fd59a7433892711376c37e41?s=940&q=50');
 						height: 70vw;
 						min-width: auto;
 					}
