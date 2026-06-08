@@ -216,13 +216,13 @@ module.exports = async function ( eleventyConfig ) {
 	eleventyConfig.addPlugin( require( 'eleventy-plugin-automatic-noopener' ) );
 
 	// https://www.npmjs.com/package/@sardine/eleventy-plugin-tinyhtml, minify and optimize HTML.
-	eleventyConfig.addPlugin( require( '@sardine/eleventy-plugin-tinyhtml' ), {
-		removeAttributeQuotes: false,
-		removeOptionalTags: false,
-		removeComments: false,
-		sortAttributes: false,
-		sortClassName: false
-	} );
+	// eleventyConfig.addPlugin( require( '@sardine/eleventy-plugin-tinyhtml' ), {
+	// 	removeAttributeQuotes: false,
+	// 	removeOptionalTags: false,
+	// 	removeComments: false,
+	// 	sortAttributes: false,
+	// 	sortClassName: false
+	// } );
 
 	// Inline Google Font CSS.
 	eleventyConfig.addPlugin( require( 'eleventy-google-fonts' ) );
